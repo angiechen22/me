@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bold AC monogram favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7efe7"/>
+      <stop offset="100%" stop-color="#dfc6ae"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#bg)"/>
+  <path d="M17 46L30 18H34L47 46H40L37.2 39H26.8L24 46H17ZM28.2 33H35.8L32 24.6L28.2 33Z" fill="#2c2927"/>
+  <path d="M46 18.5C40.5 13.5 31.5 13.3 25.5 17.5C19.3 22.1 17.2 30.2 20.6 36.8C24.2 43.6 31.8 46.5 38.8 44.2" fill="none" stroke="#8d5037" stroke-width="5" stroke-linecap="round"/>
+  <path d="M46 18.5V46" fill="none" stroke="#8d5037" stroke-width="5" stroke-linecap="round"/>
+</svg>
