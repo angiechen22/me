@@ -71,6 +71,12 @@
           "highlights": [
             {
               "text": "Spearheaded the development and launch of a new Windows 11 OS update deployment feature for IT administrators, driving the process from specification to release. Feature was used by approximately 1.5K unique tenants reaching approximately 1M devices within the first 28 days of launch, accounting for 11% of new deployments created in the platform.",
+              "links": [
+                {
+                  "label": "deployment feature for IT administrators",
+                  "url": "https://techcommunity.microsoft.com/blog/windows-itpro-blog/simplify-your-windows-11-upgrade-experience-with-intune/3974500"
+                }
+              ],
               "emphasis": ["1M devices", "11% of new deployments"]
             },
             {
