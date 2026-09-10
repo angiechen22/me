@@ -22,6 +22,8 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const storedTheme = localStorage.getItem('theme');
 const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
 
+let currentTheme = initialTheme;
+
 function applyTheme(theme) {
   currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
@@ -30,7 +32,6 @@ function applyTheme(theme) {
   }
 }
 
-let currentTheme = initialTheme;
 applyTheme(initialTheme);
 
 if (themeToggle) {
