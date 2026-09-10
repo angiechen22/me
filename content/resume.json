@@ -74,7 +74,8 @@
               "links": [
                 {
                   "label": "deployment feature for IT administrators",
-                  "url": "https://techcommunity.microsoft.com/blog/windows-itpro-blog/simplify-your-windows-11-upgrade-experience-with-intune/3974500"
+                  "url": "https://techcommunity.microsoft.com/blog/windows-itpro-blog/simplify-your-windows-11-upgrade-experience-with-intune/3974500",
+                  "previewText": "Windows IT Pro Blog"
                 }
               ],
               "emphasis": ["1M devices", "11% of new deployments"]
