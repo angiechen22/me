@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angie Chen — Resume</title>
+  <meta name="description" content="Angie Chen — professional resume and portfolio website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="#" class="nav-brand">Angie Chen</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Angie Chen</h1>
+        <p class="tagline">Your Professional Title Here</p>
+        <p class="hero-summary">
+          A short, compelling summary of who you are professionally — your focus areas,
+          what you're passionate about, and the value you bring. Replace this with 2–3
+          sentences pulled from your resume's summary section.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Get in Touch</a>
+          <a class="btn btn-secondary" href="#experience">View Experience</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <p class="section-text">
+        Use this space for a slightly longer version of your professional story — your
+        background, what drives you, and what you're looking for next. Keep it concise
+        and specific; recruiters and hiring managers scan quickly.
+      </p>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Job Title</h3>
+            <span class="timeline-date">Month Year – Present</span>
+          </div>
+          <p class="timeline-org">Company Name · Location</p>
+          <ul class="timeline-list">
+            <li>Accomplishment or responsibility, ideally with a measurable result.</li>
+            <li>Another accomplishment demonstrating impact or scope.</li>
+            <li>A third bullet highlighting a skill or technology used.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Previous Job Title</h3>
+            <span class="timeline-date">Month Year – Month Year</span>
+          </div>
+          <p class="timeline-org">Previous Company · Location</p>
+          <ul class="timeline-list">
+            <li>Accomplishment or responsibility, ideally with a measurable result.</li>
+            <li>Another accomplishment demonstrating impact or scope.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Category One</h3>
+          <ul class="tag-list">
+            <li>Skill</li><li>Skill</li><li>Skill</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Category Two</h3>
+          <ul class="tag-list">
+            <li>Skill</li><li>Skill</li><li>Skill</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Category Three</h3>
+          <ul class="tag-list">
+            <li>Skill</li><li>Skill</li><li>Skill</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Degree, Field of Study</h3>
+            <span class="timeline-date">Year – Year</span>
+          </div>
+          <p class="timeline-org">University Name · Location</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-text">
+        Interested in connecting? Reach out through any of the channels below.
+      </p>
+      <ul class="contact-list">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Angie Chen. Built with care.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
