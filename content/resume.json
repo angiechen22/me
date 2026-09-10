@@ -1,0 +1,155 @@
+{
+  "name": "Angie Chen",
+  "title": "Product Manager",
+  "location": "Seattle, WA",
+  "contact": {
+    "email": "angiexchen99@gmail.com",
+    "linkedin": {
+      "label": "angiexchen22",
+      "url": "https://linkedin.com/in/angiexchen22"
+    }
+  },
+  "experience": [
+    {
+      "company": "Microsoft",
+      "location": "Redmond, WA",
+      "roles": [
+        {
+          "title": "Product Manager II - Microsoft Update Service",
+          "startDate": "Aug 2025",
+          "endDate": "Present",
+          "duration": "1 year+",
+          "highlights": [
+            {
+              "text": "Owned the roadmap and launched a unified update publishing toolset — including a guided UI, CLI, and ADO pipeline extension — that eliminated the need for custom API integrations and enabled first-party product teams to ship updates to hundreds of millions of devices without bespoke engineering work. Adopted by 2 product teams for retail rollout and flighting, with 5 more expected by year-end.",
+              "links": [
+                {
+                  "label": "guided UI",
+                  "url": "https://aka.ms/dpp/#/onboarding",
+                  "previewText": "MSFT-internal · Corp net required"
+                }
+              ],
+              "emphasis": ["hundreds of millions of devices", "2 product teams", "5 more expected by year-end"]
+            },
+            {
+              "text": "Redesigned the onboarding flow for legacy Microsoft Update publishers migrating to the new platform, standardizing requirements gathering and validation across partner teams. The program has already onboarded 7 teams, with 13 more legacy products in queue, reducing migration effort and accelerating consolidation.",
+              "emphasis": ["7 teams", "13 more legacy products"]
+            },
+            {
+              "text": "Led strategy for high-complexity publishing scenarios, including OneDrive rollout orchestration and ring-based targeting, ensuring safe, scalable update distribution across large enterprise and consumer surfaces.",
+              "emphasis": ["safe, scalable update distribution"]
+            }
+          ]
+        },
+        {
+          "title": "Product Manager II - Windows Update Client",
+          "startDate": "Mar 2024",
+          "endDate": "Aug 2025",
+          "duration": "1 year 5 months",
+          "highlights": [
+            {
+              "text": "Shipped a new Windows Update client capability to ~300M devices, enabling developers to leverage the built-in Windows Update orchestrator for product servicing through a WinRT API surface.",
+              "links": [
+                {
+                  "label": "Windows Update client capability",
+                  "url": "https://techcommunity.microsoft.com/blog/windows-itpro-blog/introducing-a-unified-future-for-app-updates-on-windows/4416354"
+                }
+              ],
+              "emphasis": ["~300M devices", "WinRT API surface"]
+            },
+            {
+              "text": "Drove end-to-end feature validation (A/B testing) with internal experimental platforms to define success metrics and evaluate experimentation scorecards with statistical rigor.",
+              "emphasis": ["A/B testing", "success metrics"]
+            }
+          ]
+        },
+        {
+          "title": "Product Manager I - Windows Autopatch (prev. Windows Update for Business)",
+          "startDate": "Aug 2022",
+          "endDate": "Mar 2024",
+          "duration": "1 year 7 months",
+          "highlights": [
+            {
+              "text": "Spearheaded the development and launch of a new Windows 11 OS update deployment feature for IT administrators, driving the process from specification to release. Feature was used by approximately 1.5K unique tenants reaching approximately 1M devices within the first 28 days of launch, accounting for 11% of new deployments created in the platform.",
+              "emphasis": ["1M devices", "11% of new deployments"]
+            },
+            {
+              "text": "Drove the Windows Update for Business API roadmap in Microsoft Graph from beta to v1.0, closing capability gaps and securing cross-functional approvals for release.",
+              "emphasis": ["beta to v1.0"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Edviser.ai",
+      "location": "Seattle, WA",
+      "roles": [
+        {
+          "title": "Founding Product Manager",
+          "startDate": "Oct 2025",
+          "endDate": "August 2026",
+          "duration": "10 months",
+          "highlights": [
+            {
+              "text": "Led product and UX definition for Edviser Studio, a no-code tool enabling higher education institutions to scale personalized student advising through a safety-governed, institution-controlled AI platform.",
+              "emphasis": ["AI platform", "scale personalized student advising"]
+            },
+            {
+              "text": "Designed a Preview/Live governance model enabling institutions to validate and simulate AI advising experiences before any student exposure, embedding responsible AI principles into the core product.",
+              "emphasis": ["Preview/Live governance model", "responsible AI principles"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "RemixCS - Rice University",
+      "location": "Houston, TX",
+      "roles": [
+        {
+          "title": "President",
+          "startDate": "Mar 2020",
+          "endDate": "May 2022",
+          "duration": "2 years 2 months",
+          "highlights": [
+            {
+              "text": "Founded a mentorship program matching Houston-area 8-12th grade students with Rice CS students, growing the program from a dozen to 100+ participants in 2 years by partnering with local teachers and non-profits.",
+              "emphasis": ["100+ participants", "2 years"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Rice University",
+      "degree": "BA in Computer Science, Minor in Entrepreneurship",
+      "dates": "Aug 2018 - May 2022",
+      "details": [
+        "GPA: 3.8/4.0",
+        "Coursework: Data Structures & Algorithms, Compiler Construction, Advanced Object-Oriented Programming, Computer Systems, Computer Networks, Entrepreneurial Strategy, Business Modeling for Entrepreneurs, Social Entrepreneurship, Ethics of Computer Science"
+      ]
+    }
+  ],
+  "skills": {
+    "product": [
+      "Feature Roadmap and Prioritization",
+      "API Design",
+      "A/B Testing",
+      "Wireframing/Prototyping (Figma)",
+      "Human-Computer Interaction design"
+    ],
+    "technical": [
+      "Python",
+      "Java",
+      "C",
+      "JavaScript/TypeScript",
+      "React",
+      "SQL",
+      "HTML/CSS",
+      "R"
+    ]
+  }
+}
