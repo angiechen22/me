@@ -23,18 +23,19 @@ const storedTheme = localStorage.getItem('theme');
 const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
 
 function applyTheme(theme) {
+  currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
   if (themeToggle) {
     themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
   }
 }
 
+let currentTheme = initialTheme;
 applyTheme(initialTheme);
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
+    const next = currentTheme === 'dark' ? 'light' : 'dark';
     applyTheme(next);
     localStorage.setItem('theme', next);
   });
