@@ -1,0 +1,302 @@
+\usepackage{hyperref}
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1.5 cm, % seperation between body and page edge from the top
+    bottom=1.5 cm, % seperation between body and page edge from the bottom
+    left=1.5 cm, % seperation between body and page edge from the left
+    right=1.5 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Angie Chen's Resume},
+    pdfauthor={Angie Chen},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.2 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-0.5 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Angie Chen}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Seattle, WA}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:angiexchen99@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}angiexchen99@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+90-541-999-99-99}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}(630) 362-0891}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/angiexchen22}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}angiexchen22}}%
+        \kern 0.25 cm%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+    % EXPERIENCE
+    \section{Experience} 
+         % PM 2
+
+         % Windows Update: DCAT
+        \begin{twocolentry}{
+        \textit{Redmond, WA}}
+            \textbf{Microsoft}
+        \end{twocolentry}
+        
+        \begin{twocolentry}
+            {\textit{Aug 2025-Present}}
+            \textit{Product Manager II - Microsoft Update Service}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Owned roadmap and shipped an update publishing toolset — \href{https://aka.ms/dpp}{guided UI}, CLI, and ADO pipeline extension — that eliminated the need for custom API integrations and enabled teams to ship updates to hundreds of millions of devices; now in active use across 5 product teams.
+                
+                \item Overhauled onboarding for internal product teams publishing via Microsoft Update, designing a requirements-gathering flow to reconcile diverse partner needs with platform constraints, cutting onboarding time from 28 to 9.5 days and supporting the migration of 19 teams from a legacy update service to Microsoft Update by June 2027.
+                
+                \item Leading OneDrive through a complex publishing scenario on Microsoft Update, navigating ring-based rollout targeting and installer constraints.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        
+        % Windows Update: Update Client
+        \begin{twocolentry}
+            {\textit{Mar 2024 - Aug 2025}}
+            \textit{Product Manager II - Windows Update Client}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Shipped \leavevmode \href{https://techcommunity.microsoft.com/blog/windows-itpro-blog/introducing-a-unified-future-for-app-updates-on-windows/4416354}{new Windows Update client feature} (shipped to \(\sim \)300M devices) that enables developers to leverage Windows-native intelligent update orchestration for product servicing, increasing update adoption and improving app update compliance in enterprise environments. 
+                \item Partnered with development teams building Windows apps and management tools to design and develop new APIs that enable developers to register, validate, and configure their product updates to be scheduled. 
+                \item Drove end-to-end feature validation (A/B testing) with internal experimental platforms to define success metrics and evaluate experimentation scorecards with statistical rigor.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        % PM 1
+        \begin{twocolentry}{
+            
+        \textit{Aug 2022 – Mar 2024}}
+         
+            
+            \textit{Product Manager I}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Spearheaded the development and launch of a new Windows 11 OS update deployment feature for IT administrators, driving the process from specification to release. Feature was used by \(\sim \)1.5K unique tenants reaching \(\sim \)1M devices within the first 28 days of launch (accounting for 11\% of new deployments created in the platform). 
+                \item Drove the Windows Update for Business API roadmap in Microsoft Graph from beta to v1.0, closing capability gaps and securing cross-functional approvals for release.    
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+       % EDVISER.AI
+        \begin{twocolentry}{
+        \textit{Seattle, WA} 
+        
+        \textit{Oct 2025 – Present}}
+        \textbf{Edviser.ai}
+        
+        \textit{Founding Product Manager}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Led product and UX definition for Edviser Studio, a no-code tool enabling higher education institutions to scale personalized student advising through a safety-governed, institution-controlled AI platform.
+                \item Landed a pilot contract with an online institution serving 15,000 students by building a full-fidelity interactive prototype in Figma Make used in a customer pitch.
+                \item Designed a Preview/Live governance model enabling institutions to validate and simulate AI advising experiences before any student exposure, embedding responsible AI principles into the core product.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        % REMIX CS PRESIDENT
+        \begin{twocolentry}{
+        \textit{Houston, TX}    
+            
+        \textit{Mar 2020 – May 2022}}
+            \textbf{RemixCS - Rice University}
+            
+            \textit{President}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Founded a mentorship program matching Houston-area 8-12th grade students with Rice CS students, growing the program from a dozen to 100+ participants in 2 years by partnering with local teachers and non-profits.
+            \end{highlights}
+        \end{onecolentry}
+   
+   \section{Education}
+
+        \begin{twocolentry}{            
+        \textit{Aug 2018 – May 2022}}
+            \textbf{Rice University}
+            
+            \textit{BA in Computer Science, Minor in Entrepreneurship (GPA: 3.8/4.0)}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{Coursework:} Data Structures \& Algorithms, Compiler Construction, Advanced Object-Oriented Programming, Computer Systems, Computer Networks, Entrepreneurial Strategy, Business Modeling for Entrepreneurs, Social Entrepreneurship, Ethics of Computer Science
+            \end{highlights}
+        \end{onecolentry}
+    \section{Technology/Skills}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Feature Roadmap and Prioritization, API Design, A/B Testing, Wireframing/Prototyping (Figma), Human-Computer Interaction design
+                \item \textbf{Coding languages:} Python, Java, C, JavaScript/TypeScript, React, SQL, HTML/CSS, R
+             \end{highlights}
+        \end{onecolentry}
+\end{document}
