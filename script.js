@@ -124,9 +124,15 @@ function renderHighlight(highlight) {
 
 function renderExperience(experience) {
   const container = document.getElementById('experience-list');
+  if (!container) return;
+  container.innerHTML = '';
+
   experience.forEach((entry) => {
-    entry.roles.forEach((role) => {
+    entry.roles.forEach((role, idx) => {
       const article = createElement('article', null, 'timeline-item');
+      const companySlug = entry.company.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      article.id = `role-${companySlug}-${idx}`;
+
       const header = createElement('div', null, 'timeline-header');
       const date = createElement('span', `${role.startDate} – ${role.endDate}`, 'timeline-date');
       if (role.duration) {
@@ -147,6 +153,91 @@ function renderExperience(experience) {
       article.append(highlights);
       container.append(article);
     });
+  });
+}
+
+function renderRoleIndex(experience) {
+  const container = document.getElementById('role-index');
+  if (!container) return;
+  container.innerHTML = '';
+
+  experience.forEach((entry) => {
+    entry.roles.forEach((role, idx) => {
+      const item = document.createElement('a');
+      item.className = 'role-index-item';
+
+      const yearMatch = role.startDate.match(/\d{4}/);
+      const year = yearMatch ? yearMatch[0] : role.startDate;
+
+      const companySlug = entry.company.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const roleId = `role-${companySlug}-${idx}`;
+      item.href = `#${roleId}`;
+
+      const yearEl = createElement('span', year, 'role-index-year');
+      const companyEl = createElement('span', entry.company, 'role-index-company');
+
+      const shortTitle = role.title.split(' - ')[0];
+      const titleEl = createElement('span', shortTitle, 'role-index-title');
+
+      item.append(yearEl, companyEl, titleEl);
+
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById(roleId);
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      });
+
+      container.append(item);
+    });
+  });
+}
+
+function setupNavTabs() {
+  const tabs = document.querySelectorAll('.nav-tab, .nav-tab-trigger');
+  const pages = document.querySelectorAll('.page-view');
+
+  function switchTab(targetId) {
+    document.querySelectorAll('.nav-tab').forEach((tab) => {
+      const isMatch = tab.getAttribute('data-tab') === targetId || tab.getAttribute('href') === `#${targetId}`;
+      tab.classList.toggle('active', isMatch);
+    });
+
+    pages.forEach((page) => {
+      const isMatch = page.id === targetId;
+      page.classList.toggle('active-view', isMatch);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (history.pushState) {
+      history.pushState(null, null, `#${targetId}`);
+    } else {
+      location.hash = `#${targetId}`;
+    }
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = tab.getAttribute('data-tab') || tab.getAttribute('href').replace('#', '');
+      switchTab(targetId);
+    });
+  });
+
+  const initialHash = location.hash.replace('#', '');
+  if (initialHash && document.getElementById(initialHash)) {
+    switchTab(initialHash);
+  }
+
+  window.addEventListener('popstate', () => {
+    const hash = location.hash.replace('#', '') || 'about';
+    if (document.getElementById(hash)) {
+      switchTab(hash);
+    }
   });
 }
 
@@ -212,11 +303,10 @@ async function loadResume() {
   if (!response.ok) throw new Error(`Unable to load resume data (${response.status})`);
   const resume = await response.json();
 
-  document.title = `${resume.name} — Resume`;
-  document.getElementById('hero-name').textContent = resume.name;
-  const heroTitleEl = document.getElementById('hero-title');
-  if (heroTitleEl) {
-    heroTitleEl.textContent = resume.title;
+  document.title = `${resume.name} — ${resume.title}`;
+  const heroNameEl = document.getElementById('hero-name');
+  if (heroNameEl) {
+    heroNameEl.textContent = resume.name;
   }
   document.querySelector('.site-footer p').innerHTML =
     `&copy; <span id="year">${new Date().getFullYear()}</span> ${resume.name}. Built with care.`;
@@ -224,6 +314,7 @@ async function loadResume() {
   renderSkills(resume.skills);
   renderEducation(resume.education);
   renderContact(resume.contact);
+  setupNavTabs();
 }
 
 loadResume().catch((error) => {

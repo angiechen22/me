@@ -32,12 +32,12 @@
               "emphasis": ["hundreds of millions of devices", "2 product teams", "5 more expected by year-end"]
             },
             {
-              "text": "Redesigned the onboarding flow for legacy Microsoft Update publishers migrating to the new platform, standardizing requirements gathering and validation across partner teams. The program has already onboarded 7 teams, with 13 more legacy products in queue, reducing migration effort and accelerating consolidation.",
-              "emphasis": ["7 teams", "13 more legacy products"]
+              "text": "Redesigned the onboarding flow for teams joining the new platform, standardizing requirements gathering and validation — cutting onboarding time from 28 to 9.5 days. Onboarded 7 teams to date, spanning legacy migrations and new platform adoptions.",
+              "emphasis": ["28 to 9.5 days", "7 teams"]
             },
             {
-              "text": "Leading strategy for high-complexity publishing scenarios, including OneDrive rollout orchestration and ring-based targeting, ensuring safe, scalable update distribution across large enterprise and consumer surfaces.",
-              "emphasis": ["safe, scalable update distribution"]
+              "text": "Leading the migration of OneDrive to Microsoft Update through a fundamental installer architecture mismatch — negotiating and shipping a cross-team fix to unblock onboarding, and designing custom staged-targeting rules to support enterprise-scale rollout.",
+              "emphasis": ["cross-team fix", "enterprise-scale rollout"]
             }
           ]
         },
