@@ -3,62 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angie Chen</title>
-  <meta name="description" content="Hi! I'm Angie" />
+  <title>Angie Chen — Product Manager</title>
+  <meta name="description" content="Angie Chen — Product Manager making tech feel intuitive and approachable." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="shortcut icon" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Fraunces:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="page-shell">
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <a href="#about" class="brand-name">ANGIE CHEN</a>
+          <span class="brand-title">PRODUCT MANAGER</span>
+        </div>
+        <nav class="site-nav">
+          <a href="#about" class="nav-tab active" data-tab="about">ABOUT</a>
+          <a href="#resume" class="nav-tab" data-tab="resume">RESUME</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+      </div>
+    </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">Hello, I'm</p>
-          <h1 id="hero-name">Angie Chen</h1>
-          <p class="hero-summary">
-            I'm a product manager building thoughtful tools, platform experiences,
-            and responsible AI products.
-          </p>
-          <div class="hero-meta">
-            <div class="meta-block">
-              <span class="meta-label">Focused on</span>
-              <p>Translating complex technical systems into intuitive, human-centered product experiences.</p>
-            </div>
-            <div class="meta-block">
-              <span class="meta-label">Excited by</span>
-              <p>High-impact, AI-forward product teams building delightful product experiences.</p>
-            </div>
+      <section id="about" class="section about-section page-view active-view">
+        <h1 class="hero-name-intro">I'm Angie,<br><span class="hero-tagline">a <em>product manager</em> making tech feel intuitive and approachable.</span></h1>
+        <p class="current-role">Currently building update infrastructure at scale <span>@ Microsoft</span></p>
+
+        <!-- <div class="hero-meta">
+          <div class="meta-block">
+            <span class="meta-label">Focused on</span>
+            <p>Translating complex technical systems into intuitive, human-centered product experiences.</p>
           </div>
-          <div class="hero-actions"></div>
+          <div class="meta-block">
+            <span class="meta-label">Excited by</span>
+            <p>High-impact, AI-forward product teams building delightful product experiences.</p>
+          </div>
+        </div> -->
+
+        <div class="personal-about">
+          <p>I care about building product experiences that make complex technical systems feel clear, approachable, and useful. I’m especially drawn to AI-forward teams working on high-impact problems and crafting tools people genuinely enjoy using. I grew up near Chicago, went to Rice University in Houston, and now call Seattle home. When I’m not working, I’m usually baking for friends, playing soccer, or exploring the trails, mountains, and water around the Pacific Northwest. </p>
+          <ul class="photo-gallery" aria-label="Personal photo placeholders">
+            <li><span>Photo 01</span></li>
+            <li><span>Photo 02</span></li>
+            <li><span>Photo 03</span></li>
+          </ul>
         </div>
       </section>
 
-      <section id="experience" class="section">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline" id="experience-list"></div>
-      </section>
+      <section id="resume" class="section resume-section page-view">
+        <div id="experience" class="resume-block">
+          <h3 class="subsection-title">Experience</h3>
+          <div class="timeline" id="experience-list"></div>
+        </div>
 
-      <section id="skills" class="section">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid" id="skills-list"></div>
-      </section>
+        <div id="skills" class="resume-block">
+          <h3 class="subsection-title">Skills</h3>
+          <div class="skills-grid" id="skills-list"></div>
+        </div>
 
-      <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline" id="education-list"></div>
-      </section>
+        <div id="education" class="resume-block">
+          <h3 class="subsection-title">Education</h3>
+          <div class="timeline" id="education-list"></div>
+        </div>
 
-      <section id="contact" class="section contact-section">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-text">
-          Interested in connecting? Reach out through any of the channels below.
-        </p>
-        <ul class="contact-list" id="contact-list"></ul>
+        <div id="contact" class="resume-block contact-section">
+          <h3 class="subsection-title">Contact</h3>
+          <p class="section-text">
+            Interested in connecting? Reach out through any of the channels below.
+          </p>
+          <ul class="contact-list" id="contact-list"></ul>
+        </div>
       </section>
     </main>
 
