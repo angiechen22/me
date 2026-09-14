@@ -21,7 +21,7 @@
           "duration": "1 year+",
           "highlights": [
             {
-              "text": "Owned the roadmap and launched a unified update publishing toolset—including a guided UI, CLI, and ADO pipeline extension—that enabled first-party product teams to publish, distribute, and monitor updates at Windows install-base scale without the need for custom API integrations. Adopted by 2 product teams for retail rollout and flighting, with 5 more expected by year-end.",
+              "text": "Owned the roadmap and launched a unified update publishing toolset—including a guided UI, CLI, and Azure DevOps pipeline extension—that enables first-party product teams to publish, distribute, and monitor updates at Windows install-base scale without the need for custom API integrations. Adopted by 2 product teams for retail rollout and flighting, with 5 more expected by year-end.",
               "links": [
                 {
                   "label": "guided UI",
@@ -32,7 +32,7 @@
               "emphasis": ["Windows install-base scale", "2 product teams", "5 more expected by year-end"]
             },
             {
-              "text": "Redesigned onboarding for product teams adopting the modern Microsoft Update publishing service, standardizing requirements gathering and validation to reduce onboarding time from 28 to 9.5 days. Onboarded 7 product teams to date across migrations from the legacy service and net-new adoptions.",
+              "text": "Operationalized onboarding for product teams adopting the modern Microsoft Update publishing service, standardizing requirements gathering and validation to reduce onboarding time from 28 to 9.5 days. Onboarded 7 product teams to date across migrations from the legacy service and net-new adoptions.",
               "emphasis": ["28 to 9.5 days", "7 product teams"]
             },
             {
@@ -95,11 +95,11 @@
         {
           "title": "Founding Product Manager",
           "startDate": "Oct 2025",
-          "endDate": "August 2026",
+          "endDate": "Present",
           "duration": "10 months",
           "highlights": [
             {
-              "text": "Led product and UX definition for Edviser Studio, a no-code tool enabling higher education institutions to scale personalized student advising through a safety-governed, institution-controlled AI platform.",
+              "text": "Leading product strategy and experience design for Edviser Studio, a no-code platform for scaling personalized, AI-powered student advising within institution-defined safety and governance controls.",
               "emphasis": ["AI platform", "scale personalized student advising"]
             },
             {
