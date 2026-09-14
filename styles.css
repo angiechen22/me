@@ -361,6 +361,33 @@ a[data-preview]:focus-visible::before {
   box-shadow: 0 4px 12px rgba(126, 64, 41, 0.18);
 }
 
+.resume-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.resume-download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.resume-download-button:hover {
+  border-color: var(--color-accent-strong);
+  border-radius: 999px;
+  background: rgba(164, 85, 47, 0.08);
+  color: var(--color-accent-strong);
+}
+
 .personal-about-copy {
   max-width: 60rem;
 }
@@ -432,6 +459,10 @@ a[data-preview]:focus-visible::before {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.profile-photo img {
+  margin-top: -5%;
 }
 
 .photo-caption {
