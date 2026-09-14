@@ -21,7 +21,7 @@
           "duration": "1 year+",
           "highlights": [
             {
-              "text": "Owned the roadmap and launched a unified update publishing toolset—including a guided UI, CLI, and ADO pipeline extension—that eliminated custom API integrations and enabled first-party product teams to publish updates at Windows install-base scale without bespoke engineering work. Adopted by 2 product teams for retail rollout and flighting, with 5 more expected by year-end.",
+              "text": "Owned the roadmap and launched a unified update publishing toolset—including a guided UI, CLI, and ADO pipeline extension—that enabled first-party product teams to publish, distribute, and monitor updates at Windows install-base scale without the need for custom API integrations. Adopted by 2 product teams for retail rollout and flighting, with 5 more expected by year-end.",
               "links": [
                 {
                   "label": "guided UI",
